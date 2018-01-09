@@ -1,5 +1,5 @@
-php-simple-twig
-==============
+Simple Twig
+===========
 
 [![Build Status](https://travis-ci.org/WyriHaximus/php-simple-twig.png)](https://travis-ci.org/WyriHaximus/php-simple-twig)
 [![Latest Stable Version](https://poser.pugx.org/WyriHaximus/simple-twig/v/stable.png)](https://packagist.org/packages/WyriHaximus/simple-twig)
@@ -7,7 +7,7 @@ php-simple-twig
 [![Code Coverage](https://scrutinizer-ci.com/g/WyriHaximus/php-simple-twig/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/WyriHaximus/php-simple-twig/?branch=master)
 [![License](https://poser.pugx.org/wyrihaximus/simple-twig/license.png)](https://packagist.org/packages/wyrihaximus/simple-twig)
 
-Wrapping event loop ticks into a promise. 
+Wrapper around Twig making rendering a string template trivial.
 
 ## Install ##
 
