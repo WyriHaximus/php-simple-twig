@@ -10,7 +10,7 @@
     ],
     "require": {
         "php": "^7.0",
-        "twig/twig": "^2.0 || ^1.0"
+        "twig/twig": "^2.0 || ^1.20"
     },
     "require-dev": {
         "api-clients/test-utilities": "^4.2"
