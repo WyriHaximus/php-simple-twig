@@ -17,6 +17,20 @@ To install via [Composer](http://getcomposer.org/), use the command below, it wi
 composer require wyrihaximus/wyrihaximus/simple-twig 
 ```
 
+## Usage ##
+
+```php
+use WyriHaximus\Twig\render;
+
+$template = '{{ name }}';
+$data = [
+    'name' => 'Cees-Jan',
+];
+
+$result = render($template, $data);
+echo $result; // Echos "Cees-Jan"
+```
+
 ## License ##
 
 Copyright 2018 [Cees-Jan Kiewiet](http://wyrihaximus.net/)
