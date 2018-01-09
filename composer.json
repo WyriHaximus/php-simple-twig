@@ -1,6 +1,6 @@
 {
     "name": "wyrihaximus/simple-twig",
-    "description": "Simple render function that takes a template and data to render the result using Twig",
+    "description": "Wrapper around Twig making rendering a string template trivial",
     "license": "MIT",
     "authors": [
         {
