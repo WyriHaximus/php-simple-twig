@@ -24,6 +24,15 @@ final class RenderTest extends TestCase
             ],
             'Jopen, Oedipus, Texels, Guinness, De Moersleutel',
         ];
+
+        /**
+         * We can get our own template, not sure what the use is but we can
+         */
+        yield [
+            '{{ _______WyriHaximus_Twig_Render_template_contents_______ }}',
+            [],
+            '{{ _______WyriHaximus_Twig_Render_template_contents_______ }}',
+        ];
     }
 
     /**
