@@ -33,6 +33,17 @@ final class RenderTest extends TestCase
             [],
             '{{ _______WyriHaximus_Twig_Render_template_contents_______ }}',
         ];
+
+        yield [
+            '{% for name in names %}{{ name }}{% if loop.last == false %}, {% endif %}{% endfor %}' . PHP_EOL .
+                '{{ _______WyriHaximus_Twig_Render_template_contents_______ }}',
+            [
+                'names' => ['Jopen', 'Oedipus', 'Texels', 'Guinness', 'De Moersleutel'],
+            ],
+            'Jopen, Oedipus, Texels, Guinness, De Moersleutel' .
+                '{% for name in names %}{{ name }}{% if loop.last == false %}, {% endif %}{% endfor %}' . PHP_EOL .
+                '{{ _______WyriHaximus_Twig_Render_template_contents_______ }}',
+        ];
     }
 
     /**
