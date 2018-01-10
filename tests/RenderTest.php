@@ -7,14 +7,22 @@ use function WyriHaximus\Twig\render;
 
 final class RenderTest extends TestCase
 {
-    public function testRender()
+    public function provideTemplatesToRender()
     {
-        $template = '{{ name }}';
-        $data = [
-            'name' => 'Jopen',
+        yield [
+            '{{ name }}',
+            [
+                'name' => 'Cees-Jan',
+            ],
+            'Cees-Jan',
         ];
-        $expected = 'Jopen';
+    }
 
+    /**
+     * @dataProvider provideTemplatesToRender
+     */
+    public function testRender(string $template, array $data, string $expected)
+    {
         $result = render($template, $data);
         self::assertSame($expected, $result);
     }
