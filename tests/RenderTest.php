@@ -16,6 +16,14 @@ final class RenderTest extends TestCase
             ],
             'Cees-Jan',
         ];
+
+        yield [
+            '{% for name in names %}{{ name }}{% if loop.last == false %}, {% endif %}{% endfor %}',
+            [
+                'names' => ['Jopen', 'Oedipus', 'Texels', 'Guinness', 'De Moersleutel'],
+            ],
+            'Jopen, Oedipus, Texels, Guinness, De Moersleutel',
+        ];
     }
 
     /**
