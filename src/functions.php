@@ -7,7 +7,7 @@ use Twig_Extension_StringLoader;
 use Twig_Loader_Array;
 
 /**
- * Do not use this name in your data array as it will be overwritten
+ * Do not use this name in your data array as it will be overwritten.
  */
 const NAME_AND_PLACEHOLDER = '_______WyriHaximus_Twig_Render_template_contents_______';
 
