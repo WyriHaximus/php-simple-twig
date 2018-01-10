@@ -26,7 +26,7 @@ final class RenderTest extends TestCase
         ];
 
         /**
-         * We can get our own template, not sure what the use is but we can
+         * We can get our own template, not sure what the use is but we can.
          */
         yield [
             '{{ _______WyriHaximus_Twig_Render_template_contents_______ }}',
@@ -52,6 +52,7 @@ final class RenderTest extends TestCase
     public function testRender(string $template, array $data, string $expected)
     {
         $result = render($template, $data);
+        self::assertInternalType('string', $result);
         self::assertSame($expected, $result);
     }
 }
