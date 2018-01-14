@@ -14,7 +14,7 @@ Wrapper around Twig making rendering a string template trivial.
 To install via [Composer](http://getcomposer.org/), use the command below, it will automatically detect the latest version and bind it with `~`.
 
 ```
-composer require wyrihaximus/wyrihaximus/simple-twig 
+composer require wyrihaximus/simple-twig 
 ```
 
 ## Usage ##
