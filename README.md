@@ -7,7 +7,7 @@ Simple Twig
 [![Code Coverage](https://scrutinizer-ci.com/g/WyriHaximus/php-simple-twig/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/WyriHaximus/php-simple-twig/?branch=master)
 [![License](https://poser.pugx.org/wyrihaximus/simple-twig/license.png)](https://packagist.org/packages/wyrihaximus/simple-twig)
 
-Wrapper around Twig making rendering a string template trivial.
+Wrapper around [`Twig`](http://twig-project.org) making rendering a string template trivial.
 
 ## Install ##
 
