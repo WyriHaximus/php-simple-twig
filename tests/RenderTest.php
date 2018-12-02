@@ -5,6 +5,9 @@ namespace WyriHaximus\Tests\Twig;
 use PHPUnit\Framework\TestCase;
 use function WyriHaximus\Twig\render;
 
+/**
+ * @internal
+ */
 final class RenderTest extends TestCase
 {
     public function provideTemplatesToRender()
@@ -49,7 +52,7 @@ final class RenderTest extends TestCase
     /**
      * @dataProvider provideTemplatesToRender
      */
-    public function testRender(string $template, array $data, string $expected)
+    public function testRender(string $template, array $data, string $expected): void
     {
         $result = render($template, $data);
         self::assertInternalType('string', $result);

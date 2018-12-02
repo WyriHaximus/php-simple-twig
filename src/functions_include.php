@@ -3,7 +3,7 @@
 namespace WyriHaximus\Twig;
 
 // @codeCoverageIgnoreStart
-if (!function_exists('WyriHaximus\Twig\render')) {
+if (!\function_exists('WyriHaximus\Twig\render')) {
     require __DIR__ . '/functions.php';
 }
 // @codeCoverageIgnoreEnd

@@ -7,9 +7,12 @@ use Twig_Environment;
 use const WyriHaximus\Twig\NAME_AND_PLACEHOLDER;
 use function WyriHaximus\Twig\renderWithEnvironment;
 
+/**
+ * @internal
+ */
 final class RenderWithEnvironmentTest extends TestCase
 {
-    public function testRenderWithEnvironment()
+    public function testRenderWithEnvironment(): void
     {
         $template = '{{ name }}';
         $data = [
