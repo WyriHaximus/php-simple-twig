@@ -1,22 +1,25 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace WyriHaximus\Tests\Twig;
 
-use PHPUnit\Framework\TestCase;
+use WyriHaximus\TestUtilities\TestCase;
+
 use function WyriHaximus\Twig\render;
 
-/**
- * @internal
- */
+use const PHP_EOL;
+
 final class RenderTest extends TestCase
 {
-    public function provideTemplatesToRender()
+    /**
+     * @return iterable<array<mixed>>
+     */
+    public function provideTemplatesToRender(): iterable
     {
         yield [
             '{{ name }}',
-            [
-                'name' => 'Cees-Jan',
-            ],
+            ['name' => 'Cees-Jan'],
             'Cees-Jan',
         ];
 
@@ -38,24 +41,25 @@ final class RenderTest extends TestCase
         ];
 
         yield [
-            '{% for name in names %}{{ name }}{% if loop.last == false %}, {% endif %}{% endfor %}' . \PHP_EOL .
+            '{% for name in names %}{{ name }}{% if loop.last == false %}, {% endif %}{% endfor %}' . PHP_EOL .
                 '{{ _______WyriHaximus_Twig_Render_template_contents_______ }}',
             [
                 'names' => ['Jopen', 'Oedipus', 'Texels', 'Guinness', 'De Moersleutel'],
             ],
             'Jopen, Oedipus, Texels, Guinness, De Moersleutel' .
-                '{% for name in names %}{{ name }}{% if loop.last == false %}, {% endif %}{% endfor %}' . \PHP_EOL .
+                '{% for name in names %}{{ name }}{% if loop.last == false %}, {% endif %}{% endfor %}' . PHP_EOL .
                 '{{ _______WyriHaximus_Twig_Render_template_contents_______ }}',
         ];
     }
 
     /**
+     * @param array<mixed> $data
+     *
      * @dataProvider provideTemplatesToRender
      */
     public function testRender(string $template, array $data, string $expected): void
     {
         $result = render($template, $data);
-        self::assertInternalType('string', $result);
         self::assertSame($expected, $result);
     }
 }
