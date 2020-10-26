@@ -1,0 +1,8 @@
+parameters:
+	ergebnis:
+		classesAllowedToBeExtended:
+			- WyriHaximus\Broadcast\Generated\AbstractListenerProvider
+			- WyriHaximus\TestUtilities\TestCase
+
+includes:
+	- vendor/wyrihaximus/phpstan-rules-wrapper/wrapper.neon
