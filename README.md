@@ -1,10 +1,11 @@
 Simple Twig
 ===========
 
-[![Build Status](https://travis-ci.org/WyriHaximus/php-simple-twig.png)](https://travis-ci.org/WyriHaximus/php-simple-twig)
-[![Latest Stable Version](https://poser.pugx.org/WyriHaximus/simple-twig/v/stable.png)](https://packagist.org/packages/WyriHaximus/simple-twig)
-[![Total Downloads](https://poser.pugx.org/WyriHaximus/simple-twig/downloads.png)](https://packagist.org/packages/WyriHaximus/simple-twig)
-[![Code Coverage](https://scrutinizer-ci.com/g/WyriHaximus/php-simple-twig/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/WyriHaximus/php-simple-twig/?branch=master)
+![Continuous Integration](https://github.com/wyrihaximus/php-simple-twig/workflows/Continuous%20Integration/badge.svg)
+[![Latest Stable Version](https://poser.pugx.org/wyrihaximus/simple-twig/v/stable.png)](https://packagist.org/packages/wyrihaximus/simple-twig)
+[![Total Downloads](https://poser.pugx.org/wyrihaximus/simple-twig/downloads.png)](https://packagist.org/packages/wyrihaximus/simple-twig/stats)
+[![Code Coverage](https://coveralls.io/repos/github/WyriHaximus/php-simple-twig/badge.svg?branchmaster)](https://coveralls.io/github/WyriHaximus/php-simple-twig?branch=master)
+[![Type Coverage](https://shepherd.dev/github/WyriHaximus/php-simple-twig/coverage.svg)](https://shepherd.dev/github/WyriHaximus/php-simple-twig)
 [![License](https://poser.pugx.org/wyrihaximus/simple-twig/license.png)](https://packagist.org/packages/wyrihaximus/simple-twig)
 
 Wrapper around [`Twig`](http://twig-project.org) making rendering a string template trivial.
@@ -14,7 +15,7 @@ Wrapper around [`Twig`](http://twig-project.org) making rendering a string templ
 To install via [Composer](http://getcomposer.org/), use the command below, it will automatically detect the latest version and bind it with `^`.
 
 ```
-composer require wyrihaximus/simple-twig 
+composer require wyrihaximus/simple-twig
 ```
 
 ## Usage ##
@@ -33,7 +34,7 @@ echo $result; // Echos "Cees-Jan"
 
 ## License ##
 
-Copyright 2018 [Cees-Jan Kiewiet](http://wyrihaximus.net/)
+Copyright 2020 [Cees-Jan Kiewiet](http://wyrihaximus.net/)
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
