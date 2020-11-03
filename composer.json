@@ -13,7 +13,7 @@
         "twig/twig": "^3"
     },
     "require-dev": {
-        "wyrihaximus/test-utilities": "^2.9"
+        "wyrihaximus/test-utilities": "^2.9 || ^3.0"
     },
     "config": {
         "platform": {
