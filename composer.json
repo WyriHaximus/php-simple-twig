@@ -10,10 +10,10 @@
     ],
     "require": {
         "php": "^8 || ^7.4",
-        "twig/twig": "^3"
+        "twig/twig": "^3.3.2"
     },
     "require-dev": {
-        "wyrihaximus/test-utilities": "^2.9 || ^3.0"
+        "wyrihaximus/test-utilities": "^3.7.3"
     },
     "config": {
         "platform": {
