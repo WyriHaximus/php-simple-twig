@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "php": "^7.4",
+        "php": "^8 || ^7.4",
         "twig/twig": "^3"
     },
     "require-dev": {
