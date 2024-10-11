@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace WyriHaximus\Tests\Twig;
 
+use Mockery;
 use Twig\Environment;
 use WyriHaximus\TestUtilities\TestCase;
 
@@ -17,11 +18,14 @@ final class RenderWithEnvironmentTest extends TestCase
     {
         $template    = '{{ name }}';
         $data        = ['name' => 'Cees-Jan'];
-        $environment = $this->prophesize(Environment::class);
-        $environment->render(NAME_AND_PLACEHOLDER, [
-            'name' => 'Cees-Jan',
-            NAME_AND_PLACEHOLDER => $template,
-        ])->shouldBeCalled()->willReturn('');
-        renderWithEnvironment($template, $data, $environment->reveal());
+        $environment = Mockery::mock(Environment::class);
+        $environment->shouldReceive('render')->with(
+            NAME_AND_PLACEHOLDER,
+            [
+                'name' => 'Cees-Jan',
+                NAME_AND_PLACEHOLDER => $template,
+            ],
+        )->once()->andReturn('');
+        renderWithEnvironment($template, $data, $environment);
     }
 }

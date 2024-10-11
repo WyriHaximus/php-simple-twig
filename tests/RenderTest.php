@@ -12,10 +12,8 @@ use const PHP_EOL;
 
 final class RenderTest extends TestCase
 {
-    /**
-     * @return iterable<array<mixed>>
-     */
-    public function provideTemplatesToRender(): iterable
+    /** @return iterable<array<mixed>> */
+    public static function provideTemplatesToRender(): iterable
     {
         yield [
             '{{ name }}',
