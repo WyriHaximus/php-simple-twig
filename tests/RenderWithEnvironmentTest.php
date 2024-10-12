@@ -14,7 +14,8 @@ use const WyriHaximus\Twig\NAME_AND_PLACEHOLDER;
 
 final class RenderWithEnvironmentTest extends TestCase
 {
-    public function testRenderWithEnvironment(): void
+    /** @test */
+    public function renderWithEnvironment(): void
     {
         $template    = '{{ name }}';
         $data        = ['name' => 'Cees-Jan'];
@@ -25,7 +26,8 @@ final class RenderWithEnvironmentTest extends TestCase
                 'name' => 'Cees-Jan',
                 NAME_AND_PLACEHOLDER => $template,
             ],
-        )->once()->andReturn('');
-        renderWithEnvironment($template, $data, $environment);
+        )->once()->andReturn('abc');
+        $render = renderWithEnvironment($template, $data, $environment);
+        self::assertSame('abc', $render);
     }
 }
