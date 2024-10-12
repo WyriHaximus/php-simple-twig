@@ -9,17 +9,11 @@
         }
     ],
     "require": {
-        "php": "^8 || ^7.4",
-        "twig/twig": "^3.3.2"
+        "php": "^8.2",
+        "twig/twig": "^3.5"
     },
     "require-dev": {
-        "wyrihaximus/test-utilities": "^3.7.3"
-    },
-    "config": {
-        "platform": {
-            "php": "7.4.7"
-        },
-        "sort-packages": true
+        "wyrihaximus/test-utilities": "^6.0.10"
     },
     "autoload": {
         "psr-4": {
@@ -34,12 +28,25 @@
             "WyriHaximus\\Tests\\Twig\\": "tests/"
         }
     },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "ergebnis/composer-normalize": true,
+            "infection/extension-installer": true
+        },
+        "platform": {
+            "php": "8.2.13"
+        },
+        "sort-packages": true
+    },
     "scripts": {
         "post-install-cmd": [
-            "composer normalize"
+            "composer normalize",
+            "composer update --lock --no-scripts"
         ],
         "post-update-cmd": [
-            "composer normalize"
+            "composer normalize",
+            "composer update --lock --no-scripts"
         ]
     }
 }

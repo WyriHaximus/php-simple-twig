@@ -15,17 +15,13 @@ use Twig\Sandbox\SecurityPolicy;
  */
 const NAME_AND_PLACEHOLDER = '_______WyriHaximus_Twig_Render_template_contents_______';
 
-/**
- * @param array<string, mixed> $data
- */
+/** @param array<string, mixed> $data */
 function render(string $template, array $data): string
 {
     return renderWithEnvironment($template, $data, createEnvironment());
 }
 
-/**
- * @param array<string, mixed> $data
- */
+/** @param array<string, mixed> $data */
 function renderWithEnvironment(string $template, array $data, Environment $environment): string
 {
     $data[NAME_AND_PLACEHOLDER] = $template;
@@ -38,7 +34,7 @@ function createEnvironment(): Environment
     $environment = new Environment(
         new ArrayLoader([
             NAME_AND_PLACEHOLDER => '{{ include(template_from_string(' . NAME_AND_PLACEHOLDER . ')) }}',
-        ])
+        ]),
     );
     $environment->addExtension(new StringLoaderExtension());
     $environment->addExtension(new SandboxExtension(new SecurityPolicy()));
