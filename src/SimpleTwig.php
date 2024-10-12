@@ -15,7 +15,7 @@ final class SimpleTwig
     /**
      * Do not use this name in your data array as it will be overwritten.
      */
-    private const NAME_AND_PLACEHOLDER = NAME_AND_PLACEHOLDER;
+    private const NAME_AND_PLACEHOLDER = '_______WyriHaximus_Twig_Render_template_contents_______';
 
     /** @param array<string, mixed> $data */
     public static function render(string $template, array $data): string
