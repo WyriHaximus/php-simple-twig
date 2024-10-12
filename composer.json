@@ -10,7 +10,7 @@
     ],
     "require": {
         "php": "^8.2",
-        "twig/twig": "^3.5"
+        "twig/twig": "^3.14"
     },
     "require-dev": {
         "wyrihaximus/test-utilities": "^6.0.10"

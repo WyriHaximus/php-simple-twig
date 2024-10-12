@@ -21,20 +21,20 @@ composer require wyrihaximus/simple-twig
 ## Usage ##
 
 ```php
-use WyriHaximus\Twig\render;
+use WyriHaximus\Twig\SimpleTwig;
 
 $template = '{{ name }}';
 $data = [
     'name' => 'Cees-Jan',
 ];
 
-$result = render($template, $data);
+$result = SimpleTwig::render($template, $data);
 echo $result; // Echos "Cees-Jan"
 ```
 
 ## License ##
 
-Copyright 2020 [Cees-Jan Kiewiet](http://wyrihaximus.net/)
+Copyright 2024 [Cees-Jan Kiewiet](http://wyrihaximus.net/)
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation

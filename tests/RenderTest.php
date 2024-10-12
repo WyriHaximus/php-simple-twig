@@ -54,8 +54,10 @@ final class RenderTest extends TestCase
      * @param array<mixed> $data
      *
      * @dataProvider provideTemplatesToRender
+     *
+     * @test
      */
-    public function testRender(string $template, array $data, string $expected): void
+    public function render(string $template, array $data, string $expected): void
     {
         $result = render($template, $data);
         self::assertSame($expected, $result);
