@@ -13,7 +13,7 @@
         "twig/twig": "^3.14"
     },
     "require-dev": {
-        "wyrihaximus/test-utilities": "^6.0.10"
+        "wyrihaximus/test-utilities": "^6.0.10 || ^7.0.0"
     },
     "autoload": {
         "psr-4": {
