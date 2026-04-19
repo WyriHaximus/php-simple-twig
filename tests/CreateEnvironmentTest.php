@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace WyriHaximus\Tests\Twig;
 
+use PHPUnit\Framework\Attributes\Test;
 use Twig\Extension\SandboxExtension;
 use Twig\Extension\StringLoaderExtension;
 use WyriHaximus\TestUtilities\TestCase;
@@ -14,7 +15,7 @@ use function WyriHaximus\Twig\renderWithEnvironment;
 
 final class CreateEnvironmentTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function renderWithEnvironment(): void
     {
         $template = '{{ name }}';
@@ -23,7 +24,7 @@ final class CreateEnvironmentTest extends TestCase
         self::assertSame('Cees-Jan', $render);
     }
 
-    /** @test */
+    #[Test]
     public function addedExtensions(): void
     {
         $environment = createEnvironment();
