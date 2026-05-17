@@ -13,7 +13,7 @@
     "twig/twig": "^3.14.1"
   },
   "require-dev": {
-    "wyrihaximus/makefiles": "^0.7.16",
+    "wyrihaximus/makefiles": "^0.10.6",
     "wyrihaximus/test-utilities": "^12.2.0"
   },
   "autoload": {
