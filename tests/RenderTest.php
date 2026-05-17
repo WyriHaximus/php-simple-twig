@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace WyriHaximus\Tests\Twig;
 
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 use WyriHaximus\TestUtilities\TestCase;
 
 use function WyriHaximus\Twig\render;
@@ -12,16 +14,26 @@ use const PHP_EOL;
 
 final class RenderTest extends TestCase
 {
-    /** @return iterable<array<mixed>> */
+    /** @return iterable<string, array<string, mixed>> */
     public static function provideTemplatesToRender(): iterable
     {
-        yield [
+        /**
+         * Good enough
+         *
+         * @phpstan-ignore generator.valueType
+         */
+        yield 'name' => [
             '{{ name }}',
             ['name' => 'Cees-Jan'],
             'Cees-Jan',
         ];
 
-        yield [
+        /**
+         * Good enough
+         *
+         * @phpstan-ignore generator.valueType
+         */
+        yield 'beers' => [
             '{% for name in names %}{{ name }}{% if loop.last == false %}, {% endif %}{% endfor %}',
             [
                 'names' => ['Jopen', 'Oedipus', 'Texels', 'Guinness', 'De Moersleutel'],
@@ -31,14 +43,23 @@ final class RenderTest extends TestCase
 
         /**
          * We can get our own template, not sure what the use is but we can.
+         *
+         * Good enough
+         *
+         * @phpstan-ignore generator.valueType
          */
-        yield [
+        yield 'own' => [
             '{{ _______WyriHaximus_Twig_Render_template_contents_______ }}',
             [],
             '{{ _______WyriHaximus_Twig_Render_template_contents_______ }}',
         ];
 
-        yield [
+        /**
+         * Good enough
+         *
+         * @phpstan-ignore generator.valueType
+         */
+        yield 'all' => [
             '{% for name in names %}{{ name }}{% if loop.last == false %}, {% endif %}{% endfor %}' . PHP_EOL .
                 '{{ _______WyriHaximus_Twig_Render_template_contents_______ }}',
             [
@@ -50,13 +71,9 @@ final class RenderTest extends TestCase
         ];
     }
 
-    /**
-     * @param array<mixed> $data
-     *
-     * @dataProvider provideTemplatesToRender
-     *
-     * @test
-     */
+    /** @param array<string, mixed> $data */
+    #[Test]
+    #[DataProvider('provideTemplatesToRender')]
     public function render(string $template, array $data, string $expected): void
     {
         $result = render($template, $data);

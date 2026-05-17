@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace WyriHaximus\Tests\Twig;
 
 use Mockery;
+use PHPUnit\Framework\Attributes\Test;
 use Twig\Environment;
 use WyriHaximus\TestUtilities\TestCase;
 
@@ -14,7 +15,7 @@ use const WyriHaximus\Twig\NAME_AND_PLACEHOLDER;
 
 final class RenderWithEnvironmentTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function renderWithEnvironment(): void
     {
         $template    = '{{ name }}';
