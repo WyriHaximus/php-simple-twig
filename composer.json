@@ -10,7 +10,7 @@
   ],
   "require": {
     "php": "^8.4",
-    "twig/twig": "^3.14.1"
+    "twig/twig": "^3.26.0"
   },
   "require-dev": {
     "wyrihaximus/makefiles": "^0.10.6",
