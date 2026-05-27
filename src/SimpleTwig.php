@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace WyriHaximus\Twig;
 
 use Twig\Environment;
+use Twig\Extension\ExtensionInterface;
 use Twig\Extension\SandboxExtension;
 use Twig\Extension\StringLoaderExtension;
 use Twig\Loader\ArrayLoader;
@@ -31,15 +32,28 @@ final class SimpleTwig
         return $environment->render(self::NAME_AND_PLACEHOLDER, $data);
     }
 
-    public static function createEnvironment(): Environment
+    public static function createEnvironment(ExtensionInterface ...$extensions): Environment
     {
         $environment = new Environment(
             new ArrayLoader([
                 self::NAME_AND_PLACEHOLDER => '{{ include(template_from_string(' . self::NAME_AND_PLACEHOLDER . ')) }}',
             ]),
         );
+
         $environment->addExtension(new StringLoaderExtension());
         $environment->addExtension(new SandboxExtension(new SecurityPolicy()));
+
+        foreach ($extensions as $extension) {
+            if ($extension instanceof StringLoaderExtension) {
+                continue;
+            }
+
+            if ($extension instanceof SandboxExtension) {
+                continue;
+            }
+
+            $environment->addExtension($extension);
+        }
 
         return $environment;
     }

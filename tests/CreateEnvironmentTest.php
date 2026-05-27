@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace WyriHaximus\Tests\Twig;
 
 use PHPUnit\Framework\Attributes\Test;
+use Twig\Extension\DebugExtension;
 use Twig\Extension\SandboxExtension;
 use Twig\Extension\StringLoaderExtension;
 use WyriHaximus\TestUtilities\TestCase;
@@ -36,5 +37,20 @@ final class CreateEnvironmentTest extends TestCase
 
         self::assertTrue(in_array(StringLoaderExtension::class, $extensions, true));
         self::assertTrue(in_array(SandboxExtension::class, $extensions, true));
+    }
+
+    #[Test]
+    public function additionalExtensions(): void
+    {
+        $environment = createEnvironment(new DebugExtension());
+        $extensions  = [];
+
+        foreach ($environment->getExtensions() as $extension) {
+            $extensions[] = $extension::class;
+        }
+
+        self::assertTrue(in_array(StringLoaderExtension::class, $extensions, true));
+        self::assertTrue(in_array(SandboxExtension::class, $extensions, true));
+        self::assertTrue(in_array(DebugExtension::class, $extensions, true));
     }
 }
