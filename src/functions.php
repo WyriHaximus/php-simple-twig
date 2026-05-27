@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace WyriHaximus\Twig;
 
 use Twig\Environment;
+use Twig\Extension\ExtensionInterface;
 
 /**
  * Do not use this name in your data array as it will be overwritten.
@@ -23,7 +24,7 @@ function renderWithEnvironment(string $template, array $data, Environment $envir
     return SimpleTwig::renderWithEnvironment($template, $data, $environment);
 }
 
-function createEnvironment(): Environment
+function createEnvironment(ExtensionInterface ...$extensions): Environment
 {
-    return SimpleTwig::createEnvironment();
+    return SimpleTwig::createEnvironment(...$extensions);
 }
